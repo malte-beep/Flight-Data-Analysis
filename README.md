@@ -11,7 +11,7 @@ Before you begin, ensure you have the following prerequisites installed on your 
 - Python 3
 - conda or Miniconda
 
-These are essential for creating and managing the project environment using the provided `Group_20_Environment.yaml` file.
+These are essential for creating and managing the project environment using the provided `environment.yaml` file.
 
 ## How to Run the Project
 
