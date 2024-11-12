@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>flight_data_analyzer module &mdash; Group_07 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="airport_distances module" href="airport_distances.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Group_07
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">flight_data_analyzer</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="airport_distances.html">airport_distances module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">flight_data_analyzer module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Group_07</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">flight_data_analyzer</a></li>
+      <li class="breadcrumb-item active">flight_data_analyzer module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/flight_data_analyzer.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-flight_data_analyzer">
+<span id="flight-data-analyzer-module"></span><h1>flight_data_analyzer module<a class="headerlink" href="#module-flight_data_analyzer" title="Permalink to this heading"></a></h1>
+<p>This module defines the FlightDataAnalyzer class, which is designed to download,
+extract, and analyze flight data from a specified source. The analysis includes
+computing distances between airports and visualizing flight routes.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="flight_data_analyzer.FlightDataAnalyzer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">flight_data_analyzer.</span></span><span class="sig-name descname"><span class="pre">FlightDataAnalyzer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'https://gitlab.com/adpro1/adpro2024/-/raw/main/Files/flight_data.zip'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">downloads_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'downloads'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zip_file_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'flight_data.zip'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flight_data_analyzer.FlightDataAnalyzer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for analyzing and visualizing flight data. It includes methods for downloading
+flight data from a specified source, extracting and loading it into data structures,
+and performing various analyses such as distance calculations and plotting flight routes
+and airport locations using geographical data.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flight_data_analyzer.FlightDataAnalyzer.file_url">
+<span class="sig-name descname"><span class="pre">file_url</span></span><a class="headerlink" href="#flight_data_analyzer.FlightDataAnalyzer.file_url" title="Permalink to this definition"></a></dt>
+<dd><p>URL of the zip file containing flight data to download.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flight_data_analyzer.FlightDataAnalyzer.downloads_path">
+<span class="sig-name descname"><span class="pre">downloads_path</span></span><a class="headerlink" href="#flight_data_analyzer.FlightDataAnalyzer.downloads_path" title="Permalink to this definition"></a></dt>
+<dd><p>Local directory path where the zip file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">and</span> <span class="pre">its</span> <span class="pre">extracted</span> <span class="pre">contents</span> <span class="pre">will</span> <span class="pre">be</span> <span class="pre">saved.</span></span></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flight_data_analyzer.FlightDataAnalyzer.zip_file_path">
+<span class="sig-name descname"><span class="pre">zip_file_path</span></span><a class="headerlink" href="#flight_data_analyzer.FlightDataAnalyzer.zip_file_path" title="Permalink to this definition"></a></dt>
+<dd><p>Full path to the downloaded zip file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flight_data_analyzer.FlightDataAnalyzer.data">
+<span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#flight_data_analyzer.FlightDataAnalyzer.data" title="Permalink to this definition"></a></dt>
+<dd><p>A dictionary holding pandas DataFrames loaded from the extracted CSV files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Methods include capabilities to download and extract data, load CSV files into DataFrames,
+plot airports by country, analyze flight distances, plot flights by airport, identify the most
+used airplane models, and plot flights by country, with options to filter by internal flights.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="flight_data_analyzer.FlightDataAnalyzer.adapt_lists">
+<span class="sig-name descname"><span class="pre">adapt_lists</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flight_data_analyzer.FlightDataAnalyzer.adapt_lists" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flight_data_analyzer.FlightDataAnalyzer.aircraft_info">
+<span class="sig-name descname"><span class="pre">aircraft_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">aircraft_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flight_data_analyzer.FlightDataAnalyzer.aircraft_info" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves and returns information about an aircraft by its name, IATA code, or ICAO code.</p>
+<p>This method searches the aircraft dataset for a matching entry
+based on the provided name or code. If a match is found,
+it fetches detailed information using an external API (assumed to be OpenAI’s GPT model)
+and returns a generated text containing the aircraft information.</p>
+<p>Parameters:
+- aircraft_name (str): The name, IATA code, or ICAO code of the aircraft.</p>
+<p>Returns:
+- str: Detailed information about the aircraft as a string.</p>
+<p>Raises:
+- ValueError: If the provided name does not match any aircraft in the dataset.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flight_data_analyzer.FlightDataAnalyzer.aircrafts">
+<span class="sig-name descname"><span class="pre">aircrafts</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flight_data_analyzer.FlightDataAnalyzer.aircrafts" title="Permalink to this definition"></a></dt>
+<dd><p>Prints the list of all aircraft names from the dataset.</p>
+<p>This method accesses the ‘airplanes’ dataset contained within the ‘data’ attribute,
+extracts the ‘Name’ column, and prints a list of all aircraft names.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flight_data_analyzer.FlightDataAnalyzer.airport_info">
+<span class="sig-name descname"><span class="pre">airport_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flight_data_analyzer.FlightDataAnalyzer.airport_info" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves information for a specified airport by its city name or IATA/ICAO code.</p>
+<p>Parameters:
+airport_name: The city name, IATA, or ICAO code of the airport.</p>
+<p>Returns:
+The retrieved airport information as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flight_data_analyzer.FlightDataAnalyzer.airports">
+<span class="sig-name descname"><span class="pre">airports</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flight_data_analyzer.FlightDataAnalyzer.airports" title="Permalink to this definition"></a></dt>
+<dd><p>Prints a list of cities from the airports dataset.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flight_data_analyzer.FlightDataAnalyzer.distance_analysis">
+<span class="sig-name descname"><span class="pre">distance_analysis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flight_data_analyzer.FlightDataAnalyzer.distance_analysis" title="Permalink to this definition"></a></dt>
+<dd><p>Analyzes and plots the distribution of distances for all flight routes. It calculates
+the distance between source and destination airports and visualizes the results in
+a histogram.</p>
+<p>Returns:
+- matplotlib.pyplot: The plot object showing the distribution of flight distances.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flight_data_analyzer.FlightDataAnalyzer.load_csv_to_dataframe">
+<span class="sig-name descname"><span class="pre">load_csv_to_dataframe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flight_data_analyzer.FlightDataAnalyzer.load_csv_to_dataframe" title="Permalink to this definition"></a></dt>
+<dd><p>Dictionary to map file names to DataFrame attribute names</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flight_data_analyzer.FlightDataAnalyzer.most_airplane_model">
+<span class="sig-name descname"><span class="pre">most_airplane_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">countries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flight_data_analyzer.FlightDataAnalyzer.most_airplane_model" title="Permalink to this definition"></a></dt>
+<dd><p>Identifies and plots the most used airplane models,
+based on the provided flight routes data.
+This can be filtered for specific countries
+and can display a specified number of top models.</p>
+<p>Parameters:
+- countries (None, str, or list of str, optional):
+A country or list of countries to filter the routes by.
+If None, all routes are considered. Defaults to None.
+- print_n (int, optional): The number of top airplane models to display in the plot.
+Defaults to 10.</p>
+<p>Returns:
+- matplotlib.pyplot: The plot object with the most used airplane models.
+This can be shown using plt.show() or saved to a file with plt.savefig().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flight_data_analyzer.FlightDataAnalyzer.plot_country_airports">
+<span class="sig-name descname"><span class="pre">plot_country_airports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flight_data_analyzer.FlightDataAnalyzer.plot_country_airports" title="Permalink to this definition"></a></dt>
+<dd><p>Plot all Airports for a given Country using GeoPandas and return a pyplot object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>country_name</strong> (<em>-</em>) – The name of the country for which airport locations should be plotted</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flight_data_analyzer.FlightDataAnalyzer.plot_flights_by_airport">
+<span class="sig-name descname"><span class="pre">plot_flights_by_airport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">airport</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">internal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flight_data_analyzer.FlightDataAnalyzer.plot_flights_by_airport" title="Permalink to this definition"></a></dt>
+<dd><p>Plots flight routes originating from a specified airport. Optionally, it can filter
+to display only internal routes within the same country as the airport. The function
+merges route data with airport information to obtain geographical coordinates and
+country data, then uses GeoPandas and matplotlib to visualize the routes and airports
+on a world map.</p>
+<p>Parameters:
+- airport (str): IATA code of the source airport from which routes will be plotted.
+- internal (bool, optional): If True, only routes that have both their source and
+destination within the same country as the source airport are plotted. If False,
+all routes from the source airport are plotted. Defaults to False.</p>
+<p>Returns:
+- matplotlib.pyplot: The plot object, which can be displayed using plt.show() or
+saved with plt.savefig().</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flight_data_analyzer.FlightDataAnalyzer.plot_flights_by_country">
+<span class="sig-name descname"><span class="pre">plot_flights_by_country</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">internal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cutoff_distance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flight_data_analyzer.FlightDataAnalyzer.plot_flights_by_country" title="Permalink to this definition"></a></dt>
+<dd><p>Plots flight routes and airports for a specified country, differentiating
+between short-haul and long-haul flights based on a cutoff distance. It
+merges route and airport data, filters by the given country, and plots both
+the flight routes and airport locations on a map. The map can display either
+all global routes from and to the specified country or only the internal
+routes within the country.</p>
+<p>Additionally, annotates the plot with the number of short-haul routes and
+the total distance covered by these routes, avoiding double counting.</p>
+<p>Parameters:
+- country (str): The country for which flight routes and airports are to</p>
+<blockquote>
+<div><p>be plotted. The country name should match the names used in the airports
+data.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>internal (bool, optional): If True, only internal flight routes
+(i.e., both source and destination airports are within the specified
+country) are plotted. Defaults to False.</p></li>
+<li><p>cutoff_distance (float, optional): The distance (in kilometers) below
+which a flight is considered short-haul. If not specified, all flights
+are considered without categorization.</p></li>
+</ul>
+<p>Returns:
+- matplotlib.pyplot: The plot object with flight routes and airports</p>
+<blockquote>
+<div><p>plotted. This can be shown with plt.show() or saved to a file using
+plt.savefig().</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="airport_distances.html" class="btn btn-neutral float-left" title="airport_distances module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Antoine Thomas, Malte Haupt, Noah Schültke, Lennie König.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
